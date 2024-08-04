@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Polícia Federal</title>
+        <style>
+            body {
+                background-color: green;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sistemas de cadastramento de nacionalidade</h1>
+        Digite seu país: <input type="text" name="local" id="pais" />
+        <input type="button" value="Consultar" onclick="verificar()" />
+        <div id="res"></div>
+        <script>
+            function verificar() {
+                var nome = document.querySelector("input#pais");
+                var res = document.querySelector("div#res");
+                var n1 = String(nome.value);
+                res.innerHTML = `<p>Vivendo atualmente no <strong>${n1}.</strong></p>`;
+
+                if (n1 == "Brasil") {
+                    res.innerHTML += `<p>Você é <strong>Brasileiro(a)</strong></p>`;
+                } else {
+                    res.innerHTML +=
+                        "<p>Você é <strong>Estrangeiro(a)!</strong></p>";
+                }
+                res.innerHTML += "Seja bem-vindo(a)!";
+            }
+        </script>
+    </body>
+</html>
